@@ -1,0 +1,168 @@
+body {
+    font-family: 'Exo', sans-serif;
+    background-color: #1B1B21;
+}
+
+h4 {
+    color: #85ddd3;
+}
+
+.navbar {
+    font-family: 'Bangers';
+    border-bottom: 1px solid #c1fff7;
+}
+
+.navbar a {
+    color: #85ddd3;
+    background-color: #1B1B21; 
+    -webkit-transition: color .5s ease-in-out;
+}
+
+.navbar-nav {
+    float: right;
+    font-size: 150%;
+}
+
+.navbar .nav a:hover {
+    text-decoration: underline;
+    background-color: #1B1B21;
+    color: white;
+}
+.navbar-brand {
+    font-family: 'Bangers', cursive;
+    font-size: 200%;
+}
+
+.questionTitle {
+    color: #c1fff7;
+}
+
+.center-block {
+    text-align: center !important;
+    padding: 50px;
+}
+
+.text1 {
+    width: 30%;
+    background-color: #353542;
+    border: none;
+    color: white;
+}
+
+.text2 {
+    width: 50%;
+    background-color: #353542;
+    border: none;
+    color: white;
+}
+
+.error {
+    color: red;
+    font-style: italic;
+}
+
+.btn {
+    background-color: #33353a;
+    color: #c1fff7;
+    border: 1px solid #c1fff7;
+}
+
+.btn:hover {
+    border-color: white;
+    color: white; 
+}
+
+#fightersList {
+    list-style: none;
+    padding: 20px;
+}
+
+.even {
+    background-color: #33353a;
+    color: white;
+}
+.odd {
+    background-color: #3e4047;
+    color: white;
+}
+
+.nicePadding {
+    padding-bottom: 12px;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 15px;
+    border: none;
+}
+
+#pinkButton {
+    background-color: #f268b1;  
+}
+
+#purpleButton {
+    background-color: #c25eed;
+}
+
+#blueButton {
+    background-color: #5e97ed;
+}
+
+#greenButton {
+    background-color: #5eed80;
+}
+
+#yellowButton {
+    background-color: #fff766;
+}
+
+#orangeButton {
+    background-color: #fcaa46;
+}
+
+#redButton {
+    background-color: #ea4444;
+}
+
+#whiteButton {
+    background-color: white;
+}
+
+#blackButton {
+    background-color: #0f0f0f;
+}
+
+.btnMargin {
+    margin: 4px;
+}
+
+.randomColours {
+    margin-top: 40px;
+    padding: 2px;
+    color: white;
+}
+
+.selectedColours { 
+    color: white;
+}
+
+.draw {
+    color: #00bfff;
+    font-family: 'Bangers';
+}
+
+.win {
+    color: #acff28;
+    font-family: 'Bangers';
+}
+
+#rules {
+    color: white;
+    font-size: 14px;
+}
+
+
+

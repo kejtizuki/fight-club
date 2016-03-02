@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app='fightClubDev'>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Bangers|Exo|Questrial' rel='stylesheet' type='text/css'>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body ng-controller="AddFighterController">
+    <navbar></navbar>
+    
+    <div class="container">
+        <div class="center-block">
+            <form name="addFighterForm" ng-submit="submitForm()" novalidate>
+                <h4>Add a new fighter</h4>
+                <br>
+                <p class="questionTitle">First name</p>
+                <input type="text" ng-model="fighter.firstName" name="fighterFirstName" class="text1" required></input>
+                <span ng-show="addFighterForm.fighterFirstName.$error.required" class="error">{{errorRq}}</span>
+            
+                <p class="questionTitle">Last name</p>
+                <input type="text" ng-model="fighter.lastName" name="fighterLastName" class="text1" required></input>
+                <span ng-show="addFighterForm.fighterLastName.$error.required" class="error">{{errorRq}}</span>
+            
+                <p class="questionTitle">Choose a type of your fighter</p>
+                <select ng-init="getFighterNames()" ng-model="fighter.id" name="fighterId" class="text1" required>
+                    <option ng-repeat="fighter in fightersNames.availableNames" value="{{fighter.id}}">{{fighter.name}}</option>
+                </select>
+                <span ng-show="addFighterForm.fighterId.$error.required" class="error">{{errorRq}}</span>
+        
+                <p class="questionTitle">You can tell us more about your fighter</p>
+                <textarea rows="5" ng-model="fighter.description" name="fighterDescription" class="text1"></textarea>
+            
+                <br><br>
+                
+                <input class="btn" type="submit" value="Let's get it started!" />
+            </form>
+        </div>
+    </div>
+    
+<script type="text/javascript" src="js/angular/1.4.7/angular.min.js"></script>
+<script type="text/javascript" src="js/angular/1.4.7/angular-resource.min.js"></script>
+<script type="text/javascript" src="js/angular/1.4.7/angular-mocks.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/directives.js"></script>
+<script type="text/javascript" src="js/addFighterApp.js"></script>
+<script type="text/javascript" src="js/seeFightersListApp.js"></script>
+<script type="text/javascript" src="js/fightApp.js"></script>
+<script type="text/javascript" src="js/backend.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app='fightClubDev'>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Bangers|Exo|Questrial' rel='stylesheet' type='text/css'>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body ng-controller="FightController">
+    
+    <navbar></navbar>
+    <div class="container center-block" ng-init="getFighters()">
+        <div id="rules" ng-hide="rulesCompleeted">
+            <p>1. Choose fighters for your game</p>
+            <p>2. Choose colours for each fighter<p>
+            <p>3. Click the button to get random colours. If your fighter has chosen the same colours as the drawn ones he gets the points. One point for one match, two points for two matches and 3 points for 3 matches.</p>
+            <button class="btn" ng-click="proceedToGame()">Let's play!</button>
+        </div>
+        <div id="showAfterRules" ng-show="rulesCompleeted">
+        <div class="col-md-4">
+            <h4>Choose first fighter</h4>
+            <select class="text2" ng-model="firstFighter" required>
+                <option ng-repeat="f in fighters.availableFighters">{{f.firstName}} {{f.lastName}}</option>
+            </select>
+            <div ng-show="firstFighter">
+                <h4>Choose 3 colours for {{firstFighter}}</h4>
+                <buttons1></buttons1>
+                <span id="putSelectedButtonsHere1"></span>
+                <h4 ng-show="show">{{firstFighter}} gets {{firstFighterPoints}} {{p1}}</h4>
+                <h1 class="win" ng-show="firstFighterWon">{{firstFighter}} WINS!</h1>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button class="btn" ng-click="startGame()" ng-show="endSelectingFirst && endSelectingSecond" ng-disabled="disable">Start!</button>
+            <span id="addColours"></span>
+            <h1 class="draw" ng-show="draw">DRAW</h1>
+            <br>
+            <button class="btn" ng-click="restartGame()" ng-show="draw || secondFighterWon || firstFighterWon">Play again</button>
+        </div>
+        <div class="col-md-4">
+            <h4>Choose second fighter</h4>
+            <select class="text2" ng-model="secondFighter" required>
+                <option ng-repeat="f in fighters.availableFighters">{{f.firstName}} {{f.lastName}}</option>
+            </select>
+            <div ng-show="secondFighter">
+                <h4>Choose 3 colours for {{secondFighter}}</h4>
+                <buttons2></buttons2>
+                <span id="putSelectedButtonsHere2"></span>
+                <h4 ng-show="show">{{secondFighter}} gets {{secondFighterPoints}} {{p2}}</h4>
+                <h1 class="win" ng-show="secondFighterWon">{{secondFighter}} WINS!</h1>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    
+<script type="text/javascript" src="js/angular/1.4.7/angular.min.js"></script>
+<script type="text/javascript" src="js/angular/1.4.7/angular-resource.min.js"></script>
+<script type="text/javascript" src="js/angular/1.4.7/angular-mocks.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/directives.js"></script>
+<script type="text/javascript" src="js/seeFightersListApp.js"></script>
+<script type="text/javascript" src="js/addFighterApp.js"></script>
+<script type="text/javascript" src="js/fightApp.js"></script>
+<script type="text/javascript" src="js/backend.js"></script>
+
+
+</body>
+</html>
