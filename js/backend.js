@@ -1,4 +1,4 @@
-fightClub = angular.module('fightClubDev', ['addFighterApp', 'seeFightersListApp', 'fightApp', 'ngMockE2E']);
+fightClub = angular.module('fightClubDev', ['addFighterApp', 'fightApp', 'ngMockE2E']);
 
 fightClub.run(function($httpBackend){
     $httpBackend.whenGET(/^http\:\/\/localhost:8000\/api\/fightersNames$/, undefined/*headers*/)

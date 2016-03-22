@@ -2,7 +2,8 @@ var addFighterApp = angular.module('addFighterApp', ['menu', 'fightClubDev']);
 
 addFighterApp.controller('AddFighterController', ['$scope', '$http',
 function($scope, $http) {
-    $scope.fighter = {};
+//    $scope.fighter = {};
+    $scope.fighters = [];
     $scope.getFighterNames = function() {
         $http({
             method: 'GET',
@@ -14,6 +15,21 @@ function($scope, $http) {
             };
         })
         .error(function() {
+        })
+    }
+    
+    $scope.getFighters = function() {
+        $http({
+            method: 'GET', 
+            url: 'http://localhost:8000/api/fighters'
+        })
+        .success(function(data) {
+            $scope.fighters = data;
+            console.log();
+            
+        })
+        .error(function(data) {
+            
         })
     }
     
@@ -30,6 +46,7 @@ function($scope, $http) {
             .success(function(data) {
                 $scope.successMsg = 'Cool! The fighter has been added to our database';
                 console.log($scope.fighter);
+                $scope.fighters.push($scope.fighter);
                 $scope.fighter = null;
                 return true;
             })
