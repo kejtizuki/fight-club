@@ -2,7 +2,7 @@ var addFighterApp = angular.module('addFighterApp', ['menu', 'fightClubDev']);
 
 addFighterApp.controller('AddFighterController', ['$scope', '$http',
 function($scope, $http) {
-//    $scope.fighter = {};
+    $scope.fighter = {};
     $scope.fighters = [];
     $scope.getFighterNames = function() {
         $http({
